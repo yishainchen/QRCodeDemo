@@ -9,7 +9,7 @@
 
 import UIKit
 
-class QRcodeGenerator : UIViewController {
+class QRcodeGenerator : UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     
@@ -20,12 +20,24 @@ class QRcodeGenerator : UIViewController {
     @IBOutlet weak var slider: UISlider!
     
     
+    private var currentTextField: UITextField?
+    private var isKeyboardShown = false
     var qrcodeImage: CIImage!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(QRcodeGenerator.keyboardWillShow(_:)),
+            name: UIKeyboardWillShowNotification,
+            object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(QRcodeGenerator.keyboardWillHide(_:)),
+            name: UIKeyboardWillHideNotification,
+            object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,6 +45,43 @@ class QRcodeGenerator : UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+
+    func keyboardWillShow(note: NSNotification) {
+        if isKeyboardShown {
+            return
+        }
+        if (currentTextField != textField) {
+            return
+        }
+        let keyboardAnimationDetail = note.userInfo as! [String: AnyObject]
+        let duration = NSTimeInterval(keyboardAnimationDetail[UIKeyboardAnimationDurationUserInfoKey]! as! NSNumber)
+        let keyboardFrameValue = keyboardAnimationDetail[UIKeyboardFrameBeginUserInfoKey]! as! NSValue
+        let keyboardFrame = keyboardFrameValue.CGRectValue()
+        
+        UIView.animateWithDuration(duration, animations: { () -> Void in
+            self.view.frame = CGRectOffset(self.view.frame, 0, -keyboardFrame.size.height)
+        })
+        isKeyboardShown = true
+    }
+    
+    func keyboardWillHide(note: NSNotification) {
+        let keyboardAnimationDetail = note.userInfo as! [String: AnyObject]
+        let duration = NSTimeInterval(keyboardAnimationDetail[UIKeyboardAnimationDurationUserInfoKey]! as! NSNumber)
+        UIView.animateWithDuration(duration, animations: { () -> Void in
+            self.view.frame = CGRectOffset(self.view.frame, 0, -self.view.frame.origin.y)
+        })
+        isKeyboardShown = false
+    }
     
     // MARK: IBAction method implementation
     
