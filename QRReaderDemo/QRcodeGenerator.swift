@@ -38,6 +38,8 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
             selector: #selector(QRcodeGenerator.keyboardWillHide(_:)),
             name: UIKeyboardWillHideNotification,
             object: nil)
+        slider.maximumValue = 1.5
+        slider.minimumValue = 0.3
     }
     
     override func didReceiveMemoryWarning() {
@@ -119,6 +121,7 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
     
     @IBAction func changeImageViewScale(sender: AnyObject) {
         imgQRCode.transform = CGAffineTransformMakeScale(CGFloat(slider.value), CGFloat(slider.value))
+        print((slider.value))
     }
     
     
@@ -127,7 +130,6 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
     func displayQRCodeImage() {
         let scaleX = imgQRCode.frame.size.width / qrcodeImage.extent.size.width
         let scaleY = imgQRCode.frame.size.height / qrcodeImage.extent.size.height
-        
         let transformedImage = qrcodeImage.imageByApplyingTransform(CGAffineTransformMakeScale(scaleX, scaleY))
         
         imgQRCode.image = UIImage(CIImage: transformedImage)
