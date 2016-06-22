@@ -49,7 +49,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
             videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-            videoPreviewLayer?.frame = CGRectMake(0, 0, 300, 300)
+            videoPreviewLayer?.frame = view.bounds
             view.layer.addSublayer(videoPreviewLayer!)
             
             // Start video capture
