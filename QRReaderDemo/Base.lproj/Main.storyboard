@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eAU-PY-K7X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mvx-J9-aEh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="QRReaderDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="QRCode" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -28,25 +29,47 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.94999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6q-bg-KJt">
+                                <rect key="frame" x="449" y="480" width="120" height="30"/>
+                                <color key="backgroundColor" red="0.37113060590000002" green="0.69160306449999998" blue="0.45413218189999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Nlp-af-fZG"/>
+                                    <constraint firstAttribute="width" constant="120" id="Qp7-VF-bYT"/>
+                                    <constraint firstAttribute="height" constant="30" id="a6e-2p-lKa"/>
+                                </constraints>
+                                <state key="normal" title="Go Generate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.37113060590000002" green="0.69160306449999998" blue="0.45413218189999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="performButtonAction:" destination="eAU-PY-K7X" eventType="touchUpInside" id="e7I-Og-CCN"/>
+                                    <segue destination="eAU-PY-K7X" kind="push" id="fkj-HV-KaW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Th3-eq-eDK" secondAttribute="trailing" id="2Yj-XF-Dux"/>
                             <constraint firstItem="Th3-eq-eDK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="SGM-Wx-Ls3"/>
+                            <constraint firstItem="Th3-eq-eDK" firstAttribute="top" secondItem="M6q-bg-KJt" secondAttribute="bottom" constant="50" id="WjE-0P-9Fi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M6q-bg-KJt" secondAttribute="trailing" constant="11" id="g6y-rT-JhN"/>
                             <constraint firstItem="Th3-eq-eDK" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="lAb-zJ-tex"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ivO-GZ-bN4"/>
                     <connections>
+                        <outlet property="generatorBtn" destination="M6q-bg-KJt" id="fEx-0X-f2g"/>
                         <outlet property="messageLabel" destination="Th3-eq-eDK" id="In9-dj-jXV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1229" y="405"/>
         </scene>
         <!--Rcode Generator-->
         <scene sceneID="fOu-aq-7qa">
             <objects>
-                <viewController id="eAU-PY-K7X" customClass="QRcodeGenerator" customModule="QRReaderDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eAU-PY-K7X" customClass="QRcodeGenerator" customModule="QRCode" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MiR-Mg-Zxc"/>
                         <viewControllerLayoutGuide type="bottom" id="yLF-gN-f2A"/>
@@ -69,12 +92,6 @@
                                     <action selector="performButtonAction:" destination="eAU-PY-K7X" eventType="touchUpInside" id="xYm-Ef-bOL"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vuv-M8-ipA">
-                                <rect key="frame" x="200" y="74" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="SgN-HP-Hvt"/>
-                                </constraints>
-                            </imageView>
                             <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="eNL-BX-D8a">
                                 <rect key="frame" x="189" y="304" width="223" height="31"/>
                                 <constraints>
@@ -94,6 +111,13 @@
                                     <outlet property="delegate" destination="eAU-PY-K7X" id="iAe-Mi-mH8"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vuv-M8-ipA">
+                                <rect key="frame" x="200" y="74" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vuv-M8-ipA" secondAttribute="height" multiplier="1:1" id="Bzv-To-aby"/>
+                                    <constraint firstAttribute="width" constant="200" id="SgN-HP-Hvt"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -109,6 +133,7 @@
                             <constraint firstItem="psn-tN-vTI" firstAttribute="centerX" secondItem="fvX-NX-TKA" secondAttribute="centerX" id="e3z-tL-kgz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Wfo-ak-wrz"/>
                     <connections>
                         <outlet property="btnAction" destination="fvX-NX-TKA" id="JbQ-LL-pvx"/>
                         <outlet property="imgQRCode" destination="Vuv-M8-ipA" id="MeP-Ph-x5H"/>
@@ -118,7 +143,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYN-oo-YYM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077" y="410"/>
+            <point key="canvasLocation" x="2025" y="405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uld-4B-K8v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mvx-J9-aEh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wvD-pe-vsX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="IBe-Sp-PgG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nh5-6m-OvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="405"/>
         </scene>
     </scenes>
 </document>

@@ -20,7 +20,7 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
     @IBOutlet weak var slider: UISlider!
     
     
-    private var currentTextField: UITextField?
+//    private var currentTextField: UITextField?
     private var isKeyboardShown = false
     var qrcodeImage: CIImage!
     
@@ -40,6 +40,7 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
             object: nil)
         slider.maximumValue = 1.5
         slider.minimumValue = 0.3
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,12 +58,15 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.textField = textField
+    }
 
     func keyboardWillShow(note: NSNotification) {
         if isKeyboardShown {
             return
         }
-        if (currentTextField != textField) {
+        if (self.textField != textField) {
             return
         }
         let keyboardAnimationDetail = note.userInfo as! [String: AnyObject]

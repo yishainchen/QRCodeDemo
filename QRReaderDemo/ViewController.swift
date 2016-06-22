@@ -13,6 +13,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var messageLabel:UILabel!
 
+    @IBOutlet weak var generatorBtn: UIButton!
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
@@ -55,6 +56,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             // Start video capture
             captureSession?.startRunning()
             
+           
+            view.bringSubviewToFront( generatorBtn)
             // Move the message label to the top view
             view.bringSubviewToFront(messageLabel)
             

@@ -28,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		706E0EE71D1A372B0072D8A3 /* QRcodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRcodeGenerator.swift; sourceTree = "<group>"; };
-		F4973AAB1A21DD6D00E2F44E /* QRReaderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRReaderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4973AAB1A21DD6D00E2F44E /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4973AAF1A21DD6D00E2F44E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4973AB01A21DD6D00E2F44E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4973AB21A21DD6D00E2F44E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		F4973AAC1A21DD6D00E2F44E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4973AAB1A21DD6D00E2F44E /* QRReaderDemo.app */,
+				F4973AAB1A21DD6D00E2F44E /* QRCode.app */,
 				F4973AC01A21DD6E00E2F44E /* QRReaderDemoTests.xctest */,
 			);
 			name = Products;
@@ -132,7 +132,7 @@
 			);
 			name = QRReaderDemo;
 			productName = QRReaderDemo;
-			productReference = F4973AAB1A21DD6D00E2F44E /* QRReaderDemo.app */;
+			productReference = F4973AAB1A21DD6D00E2F44E /* QRCode.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F4973ABF1A21DD6E00E2F44E /* QRReaderDemoTests */ = {
@@ -345,7 +345,7 @@
 				INFOPLIST_FILE = QRReaderDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QRCode;
 			};
 			name = Debug;
 		};
@@ -356,7 +356,7 @@
 				INFOPLIST_FILE = QRReaderDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QRCode;
 			};
 			name = Release;
 		};
