@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mvx-J9-aEh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eAU-PY-K7X">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -78,7 +78,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvX-NX-TKA">
+                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvX-NX-TKA">
                                 <rect key="frame" x="240" y="488" width="120" height="30"/>
                                 <color key="backgroundColor" red="0.37113060590000002" green="0.69160306449999998" blue="0.45413218189999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -92,7 +92,7 @@
                                     <action selector="performButtonAction:" destination="eAU-PY-K7X" eventType="touchUpInside" id="xYm-Ef-bOL"/>
                                 </connections>
                             </button>
-                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="eNL-BX-D8a">
+                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="eNL-BX-D8a">
                                 <rect key="frame" x="189" y="304" width="223" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="219" id="AwZ-vG-dnX"/>
@@ -103,7 +103,7 @@
                                     <action selector="changeImageViewScale:" destination="eAU-PY-K7X" eventType="valueChanged" id="5cK-5z-U7w"/>
                                 </connections>
                             </slider>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="psn-tN-vTI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="psn-tN-vTI">
                                 <rect key="frame" x="16" y="431" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -111,7 +111,7 @@
                                     <outlet property="delegate" destination="eAU-PY-K7X" id="iAe-Mi-mH8"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vuv-M8-ipA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vuv-M8-ipA">
                                 <rect key="frame" x="200" y="74" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vuv-M8-ipA" secondAttribute="height" multiplier="1:1" id="Bzv-To-aby"/>
@@ -125,7 +125,6 @@
                             <constraint firstItem="Vuv-M8-ipA" firstAttribute="centerX" secondItem="RAZ-3h-jbb" secondAttribute="centerX" id="3f9-de-E8c"/>
                             <constraint firstItem="eNL-BX-D8a" firstAttribute="top" secondItem="Vuv-M8-ipA" secondAttribute="bottom" constant="30" id="ABz-xL-mVx"/>
                             <constraint firstItem="Vuv-M8-ipA" firstAttribute="top" secondItem="MiR-Mg-Zxc" secondAttribute="bottom" constant="54" id="FtS-xw-sbZ"/>
-                            <constraint firstItem="yLF-gN-f2A" firstAttribute="top" secondItem="fvX-NX-TKA" secondAttribute="bottom" constant="82" id="G66-te-z95"/>
                             <constraint firstItem="fvX-NX-TKA" firstAttribute="top" secondItem="psn-tN-vTI" secondAttribute="bottom" constant="27" id="Z7V-uM-KuB"/>
                             <constraint firstItem="eNL-BX-D8a" firstAttribute="centerX" secondItem="psn-tN-vTI" secondAttribute="centerX" id="ZZw-a1-K7r"/>
                             <constraint firstItem="psn-tN-vTI" firstAttribute="leading" secondItem="RAZ-3h-jbb" secondAttribute="leadingMargin" constant="-4" id="b3x-EF-6m9"/>

@@ -97,15 +97,16 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
                 return
             }
             
-            let data = textField.text!.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
+            let data = textField.text!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
             
             let filter = CIFilter(name: "CIQRCodeGenerator")
             
             filter!.setValue(data, forKey: "inputMessage")
+            //inputCorrectionLevel用於定義生成二維碼對象的修正格式，關於修正格式可以參考二維碼的通行標準。
             filter!.setValue("Q", forKey: "inputCorrectionLevel")
             
             qrcodeImage = filter!.outputImage
-            
+        
             textField.resignFirstResponder()
             
             btnAction.setTitle("Clear", forState: UIControlState.Normal)
