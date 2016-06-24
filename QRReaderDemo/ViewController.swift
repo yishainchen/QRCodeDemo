@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import RealmSwift
+
 
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
@@ -27,6 +29,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video
         // as the media type parameter.
         let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        
+    
         
         do {
             // Get an instance of the AVCaptureDeviceInput class using the previous device object.
@@ -67,7 +71,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             if let qrCodeFrameView = qrCodeFrameView {
                 qrCodeFrameView.layer.borderColor = UIColor.greenColor().CGColor
                 
-                qrCodeFrameView.layer.borderWidth = 2
+                qrCodeFrameView.layer.borderWidth = 10
                 view.addSubview(qrCodeFrameView)
                 view.bringSubviewToFront(qrCodeFrameView)
             }

@@ -19,6 +19,7 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var slider: UISlider!
     
+    var userDefault = NSUserDefaults.standardUserDefaults()
     
 //    private var currentTextField: UITextField?
     private var isKeyboardShown = false
@@ -27,6 +28,7 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
         NSNotificationCenter.defaultCenter().addObserver(
             self,
@@ -98,13 +100,13 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
             }
             
             let data = textField.text!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-            
+        
             let filter = CIFilter(name: "CIQRCodeGenerator")
             
             filter!.setValue(data, forKey: "inputMessage")
             //inputCorrectionLevel用於定義生成二維碼對象的修正格式，關於修正格式可以參考二維碼的通行標準。
             filter!.setValue("Q", forKey: "inputCorrectionLevel")
-            
+        
             qrcodeImage = filter!.outputImage
         
             textField.resignFirstResponder()
@@ -112,6 +114,10 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
             btnAction.setTitle("Clear", forState: UIControlState.Normal)
             
             displayQRCodeImage()
+            
+            //進行資料儲存
+            userDefault.setObject(data , forKey: "data")
+            userDefault.synchronize()
         }
         else {
             imgQRCode.image = nil
