@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 import RealmSwift
 
-
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var messageLabel:UILabel!
@@ -19,18 +18,19 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
-    
+    var apiStr : String?
     // Added to support different barcodes
     let supportedBarCodes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeAztecCode]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        apiStr = API.getData()
+        print(apiStr)
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video
         // as the media type parameter.
         let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         
-    
+        sumTest()
         
         do {
             // Get an instance of the AVCaptureDeviceInput class using the previous device object.

@@ -9,7 +9,14 @@ import Foundation
 import RealmSwift
 
 class QRCode: Object {
-    
+    //test Realm Storage
     dynamic var text = ""
     dynamic var age = 0
+}
+
+extension ViewController {
+    
+    func sumTest() {
+       print("hello")
+    }
 }

@@ -4,7 +4,8 @@ use_frameworks!
 
 
 target 'QRReaderDemo' do
-    
-    pod 'RealmSwift'
-    
+
+pod 'RealmSwift'
+pod 'Alamofire'
+
 end
