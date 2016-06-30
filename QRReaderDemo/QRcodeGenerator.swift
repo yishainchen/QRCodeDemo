@@ -8,6 +8,7 @@
 
 
 import UIKit
+import AVFoundation
 
 class QRcodeGenerator : UIViewController,UITextFieldDelegate {
     
@@ -133,6 +134,24 @@ class QRcodeGenerator : UIViewController,UITextFieldDelegate {
     @IBAction func changeImageViewScale(sender: AnyObject) {
         imgQRCode.transform = CGAffineTransformMakeScale(CGFloat(slider.value), CGFloat(slider.value))
         print((slider.value))
+    }
+    
+    
+    @IBAction func lightOnAndOff(sender: AnyObject) {
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        if (device.hasTorch) {
+            do {
+                try device.lockForConfiguration()
+                if (device.torchMode == AVCaptureTorchMode.On) {
+                    device.torchMode = AVCaptureTorchMode.Off
+                } else {
+                    try device.setTorchModeOnWithLevel(1.0)
+                }
+                device.unlockForConfiguration()
+            } catch {
+                print(error)
+            }
+        }
     }
     
     

@@ -12,6 +12,7 @@
 		706E0EE81D1A372B0072D8A3 /* QRcodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E0EE71D1A372B0072D8A3 /* QRcodeGenerator.swift */; };
 		707F47901D1CFA0500A31323 /* FingerPrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707F478F1D1CFA0500A31323 /* FingerPrintViewController.swift */; };
 		707F47A61D2226E800A31323 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707F47A51D2226E800A31323 /* API.swift */; };
+		707F47A81D24F8AD00A31323 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 707F47A71D24F8AD00A31323 /* AVFoundation.framework */; };
 		F4973AB11A21DD6D00E2F44E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4973AB01A21DD6D00E2F44E /* AppDelegate.swift */; };
 		F4973AB31A21DD6D00E2F44E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4973AB21A21DD6D00E2F44E /* ViewController.swift */; };
 		F4973AB61A21DD6D00E2F44E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4973AB41A21DD6D00E2F44E /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		706E0EE71D1A372B0072D8A3 /* QRcodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRcodeGenerator.swift; sourceTree = "<group>"; };
 		707F478F1D1CFA0500A31323 /* FingerPrintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerPrintViewController.swift; sourceTree = "<group>"; };
 		707F47A51D2226E800A31323 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		707F47A71D24F8AD00A31323 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7D00E381CA5BAE01246599A8 /* Pods-QRReaderDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRReaderDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QRReaderDemo/Pods-QRReaderDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BFC391244BD71A773D832713 /* Pods-QRReaderDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRReaderDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRReaderDemo/Pods-QRReaderDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F4973AAB1A21DD6D00E2F44E /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				707F47A81D24F8AD00A31323 /* AVFoundation.framework in Frameworks */,
 				423DD330FF6C2EC311584F7E /* Pods_QRReaderDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +76,7 @@
 		663B360416F3712007DE9617 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				707F47A71D24F8AD00A31323 /* AVFoundation.framework */,
 				0B52FC5EB9E67254309AF154 /* Pods_QRReaderDemoTests.framework */,
 				0668928BE3FB6287C92101F5 /* Pods_QRReaderDemo.framework */,
 			);

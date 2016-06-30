@@ -23,6 +23,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     let supportedBarCodes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeAztecCode]
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         apiStr = API.getData()
         print(apiStr)
