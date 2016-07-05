@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-import RealmSwift
+
 
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
@@ -25,13 +25,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        apiStr = API.getData()
-        print(apiStr)
+
+        
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video
         // as the media type parameter.
         let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        
-        sumTest()
         
         do {
             // Get an instance of the AVCaptureDeviceInput class using the previous device object.
