@@ -13,6 +13,7 @@
 		707F47901D1CFA0500A31323 /* FingerPrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707F478F1D1CFA0500A31323 /* FingerPrintViewController.swift */; };
 		707F47A61D2226E800A31323 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707F47A51D2226E800A31323 /* API.swift */; };
 		707F47A81D24F8AD00A31323 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 707F47A71D24F8AD00A31323 /* AVFoundation.framework */; };
+		70B14DA41D33370600295085 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B14DA31D33370600295085 /* UploadViewController.swift */; };
 		F4973AB11A21DD6D00E2F44E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4973AB01A21DD6D00E2F44E /* AppDelegate.swift */; };
 		F4973AB31A21DD6D00E2F44E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4973AB21A21DD6D00E2F44E /* ViewController.swift */; };
 		F4973AB61A21DD6D00E2F44E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4973AB41A21DD6D00E2F44E /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		707F478F1D1CFA0500A31323 /* FingerPrintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FingerPrintViewController.swift; sourceTree = "<group>"; };
 		707F47A51D2226E800A31323 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		707F47A71D24F8AD00A31323 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		70B14DA31D33370600295085 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		7D00E381CA5BAE01246599A8 /* Pods-QRReaderDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRReaderDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QRReaderDemo/Pods-QRReaderDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BFC391244BD71A773D832713 /* Pods-QRReaderDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRReaderDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRReaderDemo/Pods-QRReaderDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F4973AAB1A21DD6D00E2F44E /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				F4973AAD1A21DD6D00E2F44E /* QRReaderDemo */,
-				F4973AC31A21DD6E00E2F44E /* QRReaderDemoTests */,
 				F4973AAC1A21DD6D00E2F44E /* Products */,
 				B4D55E88B1A2047FB18FF040 /* Pods */,
 				663B360416F3712007DE9617 /* Frameworks */,
@@ -118,6 +119,8 @@
 				F4973AB01A21DD6D00E2F44E /* AppDelegate.swift */,
 				706E0EE71D1A372B0072D8A3 /* QRcodeGenerator.swift */,
 				F4973AB21A21DD6D00E2F44E /* ViewController.swift */,
+				70B14DA31D33370600295085 /* UploadViewController.swift */,
+				F4973AC31A21DD6E00E2F44E /* QRReaderDemoTests */,
 				F4973AB41A21DD6D00E2F44E /* Main.storyboard */,
 				F4973AB71A21DD6D00E2F44E /* Images.xcassets */,
 				F4973AB91A21DD6D00E2F44E /* LaunchScreen.xib */,
@@ -144,7 +147,7 @@
 				F4973AC41A21DD6E00E2F44E /* Supporting Files */,
 			);
 			path = QRReaderDemoTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		F4973AC41A21DD6E00E2F44E /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -355,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4973AB31A21DD6D00E2F44E /* ViewController.swift in Sources */,
+				70B14DA41D33370600295085 /* UploadViewController.swift in Sources */,
 				707F47901D1CFA0500A31323 /* FingerPrintViewController.swift in Sources */,
 				705F4ACE1D1BD1E50039D771 /* RealmTest.swift in Sources */,
 				706E0EE81D1A372B0072D8A3 /* QRcodeGenerator.swift in Sources */,

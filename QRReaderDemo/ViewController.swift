@@ -25,6 +25,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        API.getData()
 
         
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video
