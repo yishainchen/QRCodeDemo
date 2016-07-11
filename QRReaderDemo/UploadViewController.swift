@@ -10,9 +10,13 @@ import UIKit
 
 class UploadViewController: UIViewController {
 
+    @IBOutlet weak var idText: UITextField!
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var phoneText: UITextField!
+    @IBOutlet weak var moneyText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        API.pushData()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +26,10 @@ class UploadViewController: UIViewController {
     }
     
 
+    @IBAction func submitButton(sender: AnyObject) {
+        
+        API.pushData(idText.text!, username: nameText.text!, userphone: phoneText.text! , usermoney: moneyText.text! )
+    }
     /*
     // MARK: - Navigation
 

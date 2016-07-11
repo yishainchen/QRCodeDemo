@@ -33,9 +33,9 @@ class API: NSObject {
     }
     
     
-    class func pushData() {
+    class func pushData(userid:String , username:String, userphone:String ,usermoney:String) {
         
-        Alamofire.request(.POST , "http://localhost:3000/api/v1/todos", parameters: ["userid": "7533967","username": "Lin","userphone": "027533967","usermoney":"1230"])
+        Alamofire.request(.POST , "http://localhost:3000/api/v1/todos", parameters: ["userid": userid,"username": username,"userphone": userphone,"usermoney":usermoney])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
